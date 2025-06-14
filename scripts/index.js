@@ -2,6 +2,7 @@ const cardTemplate = document.querySelector('#card-template').content;
 
 const placesList = document.querySelector('.places__list');
 
+const popups = document.querySelectorAll('.popup');
 const profilePopup = document.querySelector('.popup_type_edit');
 const cardPopup = document.querySelector('.popup_type_new-card');
 const imagePopup = document.querySelector('.popup_type_image');
@@ -94,6 +95,10 @@ function handleCardFormSubmit(evt) {
 initialCards.forEach(function(cardData) {
   const cardElement = createCard(cardData);
   placesList.append(cardElement);
+});
+
+popups.forEach((popup) => {
+    popup.classList.add('popup_is-animated');
 });
 
 profileEditButton.addEventListener('click', function () {
